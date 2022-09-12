@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/algorithm?characterEncoding=utf-8&userSSL=false
+    username: root
+    password: zxcvbnm
+  application:
+    name: client
+  servlet:
+    multipart:
+      max-request-size: 256MB
+      max-file-size: 256MB
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  mail:
+    password: CPGIUVVQRPWDOSWQ
+    host: smtp.163.com
+    username: dawnop@163.com
+    port: 465
+  main:
+    allow-circular-references: true
+server:
+  port: 8081
+grpc:
+  client:
+    grpc-server:
+      max-inbound-message-size: 256MB
+      negotiation-type: plaintext
+      address: 'localhost:9090'
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+jwt:
+  # JWT存储的请求头
+  token-header: Authorization
+  # JWT的超期限时间（60*60*24）
+  expiration: 604800
+  # JWT 负载中拿到开头
+  token-head: Bearer

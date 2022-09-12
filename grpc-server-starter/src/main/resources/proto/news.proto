@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+
+option java_multiple_files = false;
+option java_package = "com.dawnop.news.proto";
+option java_outer_classname = "NewsProto";
+
+package news;
+service NewsService {
+  rpc hello(StringRequest) returns (StringResponse) {}
+}
+
+message StringRequest {
+  string name = 1;
+}
+
+message StringResponse {
+  string result = 1;
+}
